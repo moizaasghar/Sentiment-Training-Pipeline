@@ -10,3 +10,10 @@ logs/
 *ipynb
 
 *.csv
+
+src/bert-tiny-imdb
+src/wandb
+src/bert-tiny-sentiment
+
+
+*.vscode
