@@ -7,3 +7,4 @@ wandb
 ipywidgets
 evaluate
 python-dotenv
+sentencepiece
