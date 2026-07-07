@@ -9,7 +9,7 @@ import wandb
 # Load environment variables
 load_dotenv()
 api_key = os.environ.get("API_KEY")  # Get the API key from environment variables
-testing = os.environ.get("TESTING", "false").lower()  # Check if testing mode is enabled
+testing = os.environ.get("TESTING", "true").lower()  # Check if testing mode is enabled
 dataset_name = os.environ.get("DATASET_NAME")  # Get the dataset name from environment variables
 run_name = os.environ.get("WANDB_RUN_NAME")  # Get the Weights & Biases run name
 
