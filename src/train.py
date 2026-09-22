@@ -18,8 +18,7 @@ if api_key is None:
 
 wandb.login(key=api_key)  # Log in to Weights & Biases with the API key
 
-run = wandb.init(project="bert-tiny-imdb-23-04-26", name=run_name, job_type="train")  # Initialize a new W&B run
-
+run = wandb.init(project="bert-tiny-imdb-22-09-26", name=run_name, job_type="train")  # Initialize a new W&B run
 
 # Load the IMDB sentiment dataset (train and test splits)
 dataset = load_dataset(dataset_name)
@@ -71,7 +70,7 @@ def compute_metrics(eval_pred):
 
 # Set up training arguments for the Trainer
 training_args = TrainingArguments(
-    warmup_ratio=0.1,                        # Fraction of steps for learning rate warmup
+    warmup_ratio=0.1,
     lr_scheduler_type="cosine",               # Use cosine learning rate scheduler
     learning_rate=2e-5,                       # Initial learning rate
     max_grad_norm=1.0,                        # Gradient clipping
@@ -89,7 +88,6 @@ training_args = TrainingArguments(
     load_best_model_at_end=True,              # Load the best model at the end of training
     metric_for_best_model="f1",               # Use F1 score to select the best model
     greater_is_better=True,                   # Higher F1 is better
-
     run_name=run_name,            # Name of the training run
     save_total_limit=2,                       # Keep only the 2 most recent checkpoints
     report_to="wandb"
@@ -130,4 +128,4 @@ data_arf.add_file("train_split.csv")
 data_arf.add_file("test_split.csv")
 run.log_artifact(data_arf)
 
-run.finish()  # Finish the W&B run
+run.finish() 

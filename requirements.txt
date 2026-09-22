@@ -3,7 +3,7 @@ datasets
 torch
 scikit-learn
 accelerate
-wandb
+wandb==0.30.0
 ipywidgets
 evaluate
 python-dotenv
